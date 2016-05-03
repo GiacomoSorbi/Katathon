@@ -22,7 +22,6 @@ var Home = React.createClass({
     	<h2>Next Katathon is going to be in {Math.floor(this.state.nextDate/86400000)} days, 
     	{Math.floor(this.state.nextDate%86400000/3600000)} hours, 
     	{Math.floor(this.state.nextDate%3600000/60000)} minutes, 
-    	{Math.floor(this.state.nextDate%86400000/3600000)} hours, 
     	{Math.floor(this.state.nextDate%60000/1000)} seconds</h2>
     	<p>[Not true, just making tests...]</p>
     	</div>;
