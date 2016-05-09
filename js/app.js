@@ -44,7 +44,7 @@ var Footer = React.createClass({
 var Home = React.createClass({
   getInitialState: function(){
     //adds the nextDate property to state
-    return {nextDate: new Date(2016,4,7) - Date.now()};
+    return {nextDate: new Date(2016,4,14) - Date.now()};
   },
   componentDidMount: function(){
   	//acts when the component is loaded
