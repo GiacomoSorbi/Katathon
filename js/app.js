@@ -1,3 +1,8 @@
+import React from "react";
+//import pippi from "./layout/footer.just";
+
+//console.log(pippi);
+
 var Header = React.createClass({
   render: function () {
     return (
