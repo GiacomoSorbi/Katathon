@@ -1,7 +1,10 @@
 import React from "react";
-//import pippi from "./layout/footer.just";
+import ReactDOM from "react-dom";
 
-//console.log(pippi);
+import Footer from "./layout/Footer";
+// import pippi from "./layout/footer";
+// if (pippi) console.log(pippi);
+// else console.log("no pippi");
 
 var Header = React.createClass({
   render: function () {
@@ -32,13 +35,13 @@ var Header = React.createClass({
   }
 });
 
-var Footer = React.createClass({
-  render: function () {
-    return (
-      <div className="footer"></div>
-    );
-  }
-});
+// var Footer = React.createClass({
+//   render: function () {
+//     return (
+//       <div className="footer"></div>
+//     );
+//   }
+// });
 
 //ReactDOM.render(<h1><>, document.getElementById('app'));
 var Home = React.createClass({
