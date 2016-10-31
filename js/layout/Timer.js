@@ -29,4 +29,4 @@ var Timer = React.createClass({
   }
 });
 
-module.exports = {Timer};
+module.exports = Timer;

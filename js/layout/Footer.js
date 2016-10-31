@@ -8,4 +8,4 @@ class Footer extends React.Component {
   }
 }
 
-module.exports = {Footer};
+module.exports = Footer;
