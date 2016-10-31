@@ -1,31 +1,24 @@
-var debug = process.env.NODE_ENV !== "production";
-var webpack = require('webpack');
-var path = require('path');
+var HTMLWebpackPlugin = require('html-webpack-plugin');
+var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
+	template: __dirname + '/index.html',
+	filename: 'index.html',
+	inject: 'body'
+});
 
 module.exports = {
-  context: path.join(__dirname, ""),
-  devtool: debug ? "inline-sourcemap" : null,
-  entry: "./js/app.js",
-  module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        //exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015', 'stage-0'],
-          plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
-        }
-      }
-    ]
-  },
-  output: {
-    path: __dirname + "/js/",
-    filename: "app.min.js"
-  },
-  plugins: debug ? [] : [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-  ],
+	entry: __dirname + '/js/app.js',
+	module: {
+		loaders: [
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader'
+			}
+		]
+	},
+	output: {
+		filename: 'bundle.js',
+		path: __dirname + '/build'
+	},
+	plugins: [HTMLWebpackPluginConfig]
 };
