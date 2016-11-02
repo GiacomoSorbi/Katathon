@@ -3,6 +3,15 @@
 ##General
 This project is meant to connect together all the coding aficionados that started to meet together (either physically or remotely) to start solving a bunch of pre-selected problems in a competitive and friendly way.
 
+##Local Setup
+To set up this repo for local viewing/testing, first of all make sure you have NodeJS and NPM installed.
+once you have cloned the repo, navigate to the root directory in terminal and install the dependencies with:
+```npm install```
+To start the server, type the following two commands one at a time:
+```npm run build```
+```npm run start```
+In your browser, navigate to http://localhost:8080/webpack-dev-server to view the site
+
 ##Aims and Goals
 * create the main site of a community of competitive coding enthusiasts
 * practice development skills, including:
