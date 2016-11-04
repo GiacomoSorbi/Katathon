@@ -1,9 +1,9 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
 
-var Footer = require("./layout/Footer");
-var Header = require("./layout/Header");
-var Home = require("./layout/Home");
+var Footer = require("./components/Footer");
+var Header = require("./components/Header");
+var Home = require("./components/Home");
 
 var Page = React.createClass({
   getInitialState: function(){
