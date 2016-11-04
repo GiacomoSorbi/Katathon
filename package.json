@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/GiacomoSorbi/Katathon#readme",
   "dependencies": {
+    "extract-text-webpack-plugin": "^1.0.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
@@ -26,7 +27,11 @@
     "babel-core": "^6.18.0",
     "babel-loader": "^6.2.7",
     "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.25.0",
     "html-webpack-plugin": "^2.24.1",
+    "node-sass": "^3.11.1",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   }
