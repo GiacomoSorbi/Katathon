@@ -21642,8 +21642,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./global.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./global.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./global.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./global.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -21661,7 +21661,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n\tfont-family: sans-serif;\n\tcolor: #444;\n}\nbody {\n\tpadding: 0;\n\tmargin: 0;\n}", ""]);
+	exports.push([module.id, "html {\n  font-family: sans-serif;\n  color: #444; }\n\nbody {\n  padding: 0;\n  margin: 0; }\n", ""]);
 
 	// exports
 

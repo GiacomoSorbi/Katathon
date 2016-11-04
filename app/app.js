@@ -5,7 +5,7 @@ var Footer = require("./components/Footer");
 var Header = require("./components/Header");
 var Home = require("./components/Home");
 
-require("./styles/global.css"); 
+require("./styles/global.scss"); 
 
 var Page = React.createClass({
   getInitialState: function(){
