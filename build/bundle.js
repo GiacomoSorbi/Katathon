@@ -44,6 +44,8 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(34);
 
@@ -56,10 +58,10 @@
 	var Page = React.createClass({
 	  displayName: "Page",
 
-	  getInitialState: function () {
+	  getInitialState: function getInitialState() {
 	    return { page: "home" };
 	  },
-	  render: function () {
+	  render: function render() {
 	    return React.createElement(
 	      "div",
 	      { className: "page" },
@@ -21426,18 +21428,41 @@
 /* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 	var React = __webpack_require__(1);
 
-	class Footer extends React.Component {
-	  render() {
-	    return React.createElement(
-	      "footer",
-	      null,
-	      "footer - you are now in ",
-	      this.props.page
-	    );
+	var Footer = function (_React$Component) {
+	  _inherits(Footer, _React$Component);
+
+	  function Footer() {
+	    _classCallCheck(this, Footer);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Footer).apply(this, arguments));
 	  }
-	}
+
+	  _createClass(Footer, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "footer",
+	        null,
+	        "footer - you are now in ",
+	        this.props.page
+	      );
+	    }
+	  }]);
+
+	  return Footer;
+	}(React.Component);
 
 	module.exports = Footer;
 
@@ -21445,107 +21470,132 @@
 /* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 	var React = __webpack_require__(1);
 
-	class Header extends React.Component {
-			render() {
-					return React.createElement(
-							"header",
-							null,
-							React.createElement(
-									"nav",
-									{ className: "navbar navbar-default" },
+	var Header = function (_React$Component) {
+			_inherits(Header, _React$Component);
+
+			function Header() {
+					_classCallCheck(this, Header);
+
+					return _possibleConstructorReturn(this, Object.getPrototypeOf(Header).apply(this, arguments));
+			}
+
+			_createClass(Header, [{
+					key: "render",
+					value: function render() {
+							return React.createElement(
+									"header",
+									null,
 									React.createElement(
-											"div",
-											{ className: "container-fluid" },
+											"nav",
+											{ className: "navbar navbar-default" },
 											React.createElement(
 													"div",
-													{ className: "navbar-header" },
+													{ className: "container-fluid" },
 													React.createElement(
-															"button",
-															{ type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#bs-example-navbar-collapse-1", "aria-expanded": "false" },
+															"div",
+															{ className: "navbar-header" },
 															React.createElement(
-																	"span",
-																	{ className: "sr-only" },
-																	"Toggle navigation"
+																	"button",
+																	{ type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#bs-example-navbar-collapse-1", "aria-expanded": "false" },
+																	React.createElement(
+																			"span",
+																			{ className: "sr-only" },
+																			"Toggle navigation"
+																	),
+																	React.createElement("span", { className: "icon-bar" }),
+																	React.createElement("span", { className: "icon-bar" }),
+																	React.createElement("span", { className: "icon-bar" })
 															),
-															React.createElement("span", { className: "icon-bar" }),
-															React.createElement("span", { className: "icon-bar" }),
-															React.createElement("span", { className: "icon-bar" })
+															React.createElement(
+																	"a",
+																	{ className: "navbar-brand", href: "#" },
+																	"Katathon"
+															)
 													),
 													React.createElement(
-															"a",
-															{ className: "navbar-brand", href: "#" },
-															"Katathon"
-													)
-											),
-											React.createElement(
-													"div",
-													{ className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1" },
-													React.createElement(
-															"ul",
-															{ className: "nav navbar-nav" },
+															"div",
+															{ className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1" },
 															React.createElement(
-																	"li",
-																	{ className: "active" },
+																	"ul",
+																	{ className: "nav navbar-nav" },
 																	React.createElement(
-																			"a",
-																			{ href: "#" },
-																			"Link ",
+																			"li",
+																			{ className: "active" },
 																			React.createElement(
-																					"span",
-																					{ className: "sr-only" },
-																					"Home"
+																					"a",
+																					{ href: "#" },
+																					"Link ",
+																					React.createElement(
+																							"span",
+																							{ className: "sr-only" },
+																							"Home"
+																					)
 																			)
-																	)
-															),
-															React.createElement(
-																	"li",
-																	null,
+																	),
 																	React.createElement(
-																			"a",
-																			{ href: "#" },
-																			"About"
-																	)
-															),
-															React.createElement(
-																	"li",
-																	null,
+																			"li",
+																			null,
+																			React.createElement(
+																					"a",
+																					{ href: "#" },
+																					"About"
+																			)
+																	),
 																	React.createElement(
-																			"a",
-																			{ href: "#" },
-																			"Resources"
-																	)
-															),
-															React.createElement(
-																	"li",
-																	null,
+																			"li",
+																			null,
+																			React.createElement(
+																					"a",
+																					{ href: "#" },
+																					"Resources"
+																			)
+																	),
 																	React.createElement(
-																			"a",
-																			{ href: "#" },
-																			"Join Us"
-																	)
-															),
-															React.createElement(
-																	"li",
-																	null,
+																			"li",
+																			null,
+																			React.createElement(
+																					"a",
+																					{ href: "#" },
+																					"Join Us"
+																			)
+																	),
 																	React.createElement(
-																			"a",
-																			{ href: "#" },
-																			"Follow Us"
+																			"li",
+																			null,
+																			React.createElement(
+																					"a",
+																					{ href: "#" },
+																					"Follow Us"
+																			)
 																	)
 															)
 													)
 											)
 									)
-							)
-					);
-			}
-	}
+							);
+					}
+			}]);
+
+			return Header;
+	}(React.Component);
 
 /***/ },
 /* 174 */
 /***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
 
 	var React = __webpack_require__(1);
 
@@ -21555,7 +21605,7 @@
 	  displayName: "Home",
 
 
-	  render: function () {
+	  render: function render() {
 	    return React.createElement(
 	      "div",
 	      null,
@@ -21580,6 +21630,8 @@
 /* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
 	var React = __webpack_require__(1);
 
 	var Timer = React.createClass({
@@ -21587,23 +21639,23 @@
 
 	  //setting data for the next katathon
 	  nextDate: new Date(2016, 11, 12),
-	  getInitialState: function () {
+	  getInitialState: function getInitialState() {
 	    //adds the timeLeft property to state
 	    return { timeLeft: this.nextDate - Date.now() };
 	  },
-	  componentDidMount: function () {
+	  componentDidMount: function componentDidMount() {
 	    //acts when the component is loaded
 	    this.timer = setInterval(this.tick, 1000);
 	  },
-	  componentWillUnmount: function () {
+	  componentWillUnmount: function componentWillUnmount() {
 	    //acts then the component is removed
 	    clearInterval(this.timer);
 	  },
-	  tick: function () {
+	  tick: function tick() {
 	    //function called by timer to update the timeLeft variable
 	    this.setState({ timeLeft: this.nextDate - Date.now() });
 	  },
-	  render: function () {
+	  render: function render() {
 	    return React.createElement(
 	      "div",
 	      null,
