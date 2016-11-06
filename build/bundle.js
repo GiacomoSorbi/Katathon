@@ -71,6 +71,7 @@
 	  }
 	});
 
+	module.exports = Page;
 	ReactDOM.render(React.createElement(Page, null), document.getElementById('app'));
 
 /***/ },
