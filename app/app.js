@@ -21,6 +21,4 @@ var Page = React.createClass({
   }
 });
 
-
-module.exports = Page;
 ReactDOM.render(<Page/>, document.getElementById('app'));
