@@ -17,7 +17,11 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				loader: "style-loader!css-loader!sass-loader"
-			}
+			},
+      {
+        test: /\.jpg$/,
+        loader: "url-loader"
+      }
 		]
 	},
 	output: {
@@ -26,3 +30,8 @@ module.exports = {
 	},
 	plugins: [HTMLWebpackPluginConfig]
 };
+
+      // {
+      //   test: /\.jpg$/,
+      //   loader: "file-loader?name=banner-image.jpg&publicPath=img/&outputPath=images/"
+      // }
