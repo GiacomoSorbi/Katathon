@@ -7,7 +7,6 @@ var HomeBanner = React.createClass({
     return (
       <div className="home-banner">
         <div className="overlay">
-          <h2>Hello Coders!</h2>
           <Timer/>
         </div>
       </div>

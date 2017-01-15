@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron:400,500');
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
 
 h1 {
   font-family: 'Orbitron', sans-serif;
@@ -6,6 +7,12 @@ h1 {
   text-align: center;
   color: #fff;
   margin: 0;
+}
+
+.time-container {
+  h1 {
+    font-family: 'Cutive Mono';
+  }
 }
 
 h2 {
