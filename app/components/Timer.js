@@ -2,7 +2,7 @@ var React = require("react");
 
 var Timer = React.createClass({
   //setting data for the next katathon
-  nextDate: new Date(2016,11,12),
+  nextDate: new Date('2017-01-28 10:00:00'),
   getInitialState: function(){
     //adds the timeLeft property to state
     return {timeLeft: this.nextDate - Date.now()};
