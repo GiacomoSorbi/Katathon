@@ -6,6 +6,7 @@ function TimeDisplay(props) {
       <h2>Hello Coders!</h2>
       <h2>Time until the next Katathon:</h2>
       <h1>{props.days} days, {props.hours}:{props.minutes}:{props.seconds}</h1>
+      <h2><a href="https://www.meetup.com/Codecademy-London/" target="_blank">Sign up here...</a></h2>
     </div>
   );
 }

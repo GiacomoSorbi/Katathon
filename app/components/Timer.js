@@ -3,6 +3,7 @@ var TimeDisplay = require("./Time-display");
 
 var Timer = React.createClass({
   //setting data for the next katathon
+  //could it be possible to retrieve this data automatically, using the Meetup API?
   nextDate: new Date('2017-01-28 10:00:00'),
   getInitialState: function(){
     //adds the timeLeft property to state
