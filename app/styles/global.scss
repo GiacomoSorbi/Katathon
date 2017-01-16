@@ -1,8 +1,9 @@
 @import 'fonts';
 @import 'components';
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono');
 
 html {
-	font-family: sans-serif;
+	font-family: 'Overpass Mono', monospace;
 	color: #eee;
 }
 body {
