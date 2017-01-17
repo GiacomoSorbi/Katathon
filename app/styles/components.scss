@@ -1,3 +1,9 @@
+.container {
+  position: relative;
+  margin: 0 auto;
+  min-height: 500px;
+}
+
 .main-nav {
   background-color: #479;
   padding: 20px 0;
@@ -13,12 +19,40 @@
 
 .overlay {
   background-color: rgba(20,20,20,0.7);
-  min-height: 500px;
+  min-height: 400px;
   text-align: center;
 }
 
 .time-container {
   display: inline-block;
-  max-width: 500px;
-  padding: 100px 0;
+  max-width: 340px;
+  margin: 30px 10px;
+  border-radius: 20px;
+  padding: 50px 0;
+  background-color: rgba(240, 240, 240, 0.9);
+  color: #555;
+  box-shadow: 3px 3px 5px 0px #555;
+}
+
+.headline-container {
+  display: inline-block;
+  max-width: 340px;
+  padding: 30px 50px;
+  text-align: left;
+  color: #eee;
+}
+
+.primary-button {
+  font-size: 1.5em;
+  color: #eee;
+  background-color: #479;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+footer {
+  background-color: #555;
+  color: #eee;
+  padding: 5px 10px;
 }

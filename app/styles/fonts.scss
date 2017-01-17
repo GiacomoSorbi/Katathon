@@ -2,18 +2,23 @@
 
 
 h1 {
-  font-size: 4em;
+  font-size: 3em;
   text-align: center;
-  color: #fff;
   margin: 0;
 }
 
 .main-nav {
   h1 {
     font-family: 'Orbitron', sans-serif;
+    color: #eee;
   }
 }
 
 h2 {
   margin: 0;
+}
+
+a {
+  color: #479;
+  text-decoration: none;
 }

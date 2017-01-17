@@ -1,4 +1,5 @@
 var React = require("react");
+var Container = require("./Container");
 var Timer = require("./Timer");
 var Headline = require("./Headline");
 
@@ -8,8 +9,10 @@ var HomeBanner = React.createClass({
     return (
       <div className="home-banner">
         <div className="overlay">
-          <Timer/>
-          <Headline/>
+          <Container>
+            <Timer/>
+            <Headline/>
+          </Container>
         </div>
       </div>
     );
