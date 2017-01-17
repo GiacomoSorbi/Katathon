@@ -14,6 +14,7 @@ var Page = React.createClass({
   render: function () {
     return (
       <div className="page">
+        <Header/>
         <Home/>
         <Footer page={this.state.page}/>
       </div>

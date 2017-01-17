@@ -1,0 +1,24 @@
+.main-nav {
+  background-color: #479;
+  padding: 20px 0;
+}
+
+.home-banner {
+  background: url("../img/banner-image.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.overlay {
+  background-color: rgba(20,20,20,0.7);
+  min-height: 500px;
+  text-align: center;
+}
+
+.time-container {
+  display: inline-block;
+  max-width: 500px;
+  padding: 100px 0;
+}
