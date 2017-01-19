@@ -1,12 +1,15 @@
-var React = require('react');
+import React from 'react';
+import Link from 'react-router';
 
-function Button(props) {
-  var divStyle = {
+const Button = (props) => {
+  let divStyle = {
     textAlign: props.alignment
   };
   return (
     <div className="alignment-container" style={divStyle} >
-      <button className={props.buttonType}>{props.show}</button>
+      <button className={props.buttonType}>
+        {props.show}
+      </button>
     </div>
   );
 }

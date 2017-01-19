@@ -1,7 +1,7 @@
-var React = require("react");
-var TimeDisplay = require("./Time-display");
+import React from 'react';
+import TimeDisplay from './Time-display';
 
-var Timer = React.createClass({
+const Timer = React.createClass({
   //setting data for the next katathon
   //could it be possible to retrieve this data automatically, using the Meetup API?
   nextDate: new Date('2017-01-28 10:00:00'),
@@ -22,14 +22,14 @@ var Timer = React.createClass({
   	this.setState({timeLeft: this.nextDate - Date.now()});
   },
   render: function(){
-    var days = Math.floor(this.state.timeLeft/86400000),
+    let days = Math.floor(this.state.timeLeft/86400000),
     hours = Math.floor(this.state.timeLeft%86400000/3600000),
     minutes = Math.floor(this.state.timeLeft%3600000/60000),
     seconds = Math.floor(this.state.timeLeft%60000/1000)
 
     //generalised function for left-padding time values
     function stringifyTime(t) {
-      return (t < 10) ? "0" + t : t;
+      return (t < 10) ? '0' + t : t;
     }
 
     //time values are passed to a stateless functional component to separate timer logic from UI
@@ -37,4 +37,4 @@ var Timer = React.createClass({
   }
 });
 
-module.exports = Timer;
+export default Timer;

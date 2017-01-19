@@ -1,6 +1,6 @@
-var React = require('react');
+import React from 'react';
 
-function Container(props) {
+const Container = (props) => {
   return (
     <div className="container">
       {props.children}

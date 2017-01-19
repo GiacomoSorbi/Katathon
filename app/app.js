@@ -1,25 +1,28 @@
-var React = require("react");
-var ReactDOM = require("react-dom");
+import React from 'react';
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Home from './components/Home';
+import About from './components/About';
 
-var Footer = require("./components/Footer");
-var Header = require("./components/Header");
-var Home = require("./components/Home");
+import './styles/global.scss';
 
-require("./styles/global.scss");
-
-var App = React.createClass({
+const App = React.createClass({
   getInitialState: function(){
-    return {page: "home"}
+    return {page: 'home'}
   },
   render: function () {
     return (
       <div className="page">
         <Header/>
-        <Home/>
+        <Router history={hashHistory}>
+          <Route path='/' component={Home} />
+          <Route path='/about' component={About} />
+        </Router>
         <Footer page={this.state.page}/>
       </div>
     );
   }
 });
 
-module.exports = App;
+export default App;
