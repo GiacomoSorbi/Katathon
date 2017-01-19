@@ -7,7 +7,7 @@ var Home = require("./components/Home");
 
 require("./styles/global.scss");
 
-var Page = React.createClass({
+var App = React.createClass({
   getInitialState: function(){
     return {page: "home"}
   },
@@ -22,4 +22,4 @@ var Page = React.createClass({
   }
 });
 
-ReactDOM.render(<Page/>, document.getElementById('app'));
+module.exports = App;
