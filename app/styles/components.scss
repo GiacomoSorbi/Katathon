@@ -18,7 +18,7 @@
 }
 
 .overlay {
-  background-color: rgba(20,20,20,0.7);
+  background-color: rgba(20,20,20,0.9);
   min-height: 400px;
   text-align: center;
 }
@@ -43,6 +43,7 @@
 }
 
 .primary-button {
+  font-family: 'Overpass Mono', monospace;
   font-size: 1.5em;
   color: #eee;
   background-color: #479;
