@@ -4,9 +4,28 @@
 
 html {
 	font-family: 'Overpass Mono', monospace;
-	color: #eee;
 }
 body {
 	padding: 0;
 	margin: 0;
+}
+
+.alignment-container {
+  width: 100%;
+}
+
+
+/* Media Queries */
+
+@media screen and (min-width: 820px) {
+  .container {
+    max-width: 80%;
+  }
+  .time-container {
+    position: absolute;
+    right: 20px;
+  }
+  .headline-container {
+    margin-right: 350px;
+  }
 }

@@ -1,6 +1,6 @@
-var React = require("react");
+import React from 'react';
 
-function TimeDisplay(props) {
+const TimeDisplay = (props) => {
   return (
     <div className="time-container">
       <h2>Hello Coders!</h2>

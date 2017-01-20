@@ -1,15 +1,13 @@
-var React = require("react");
+import React from 'react';
 
-class Header extends React.Component {
-  render() {
-    return (
-      <header>
-	      <nav className="main-nav">
-          <h1>Katathon</h1>
-	      </nav>
-      </header>
-    );
-  }
+const Header = (props) => {
+  return (
+    <header>
+      <nav className="main-nav">
+        <h1>Katathon</h1>
+      </nav>
+    </header>
+  );
 }
 
 module.exports = Header;

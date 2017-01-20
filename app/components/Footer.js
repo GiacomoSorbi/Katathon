@@ -1,13 +1,11 @@
-var React = require("react");
+import React from 'react';
 
-class Footer extends React.Component {
-  render() {
-    return (
-      <footer>
-        <p>footer - you are now in {this.props.page}</p>
-      </footer>
-    );
-  }
+const Footer = (props) => {
+  return (
+    <footer>
+      <p>footer - you are now in {props.page}</p>
+    </footer>
+  );
 }
 
 module.exports = Footer;
