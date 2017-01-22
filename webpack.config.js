@@ -16,10 +16,12 @@ module.exports = {
 			},
 			{
 				test: /\.scss$/,
+        exclude: /node_modules/,
 				loader: "style-loader!css-loader!sass-loader"
 			},
       {
         test: /\.jpg$/,
+        exclude: /node_modules/,
         loader: "url-loader"
       }
 		]
@@ -31,7 +33,3 @@ module.exports = {
 	plugins: [HTMLWebpackPluginConfig]
 };
 
-      // {
-      //   test: /\.jpg$/,
-      //   loader: "file-loader?name=banner-image.jpg&publicPath=img/&outputPath=images/"
-      // }
