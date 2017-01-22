@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'react-router';
 import Container from './Container';
 import Timer from './Timer';
 import Headline from './Headline';
