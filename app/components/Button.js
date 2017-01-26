@@ -7,9 +7,11 @@ const Button = (props) => {
   };
   return (
     <div className="alignment-container" style={divStyle} >
+    <a href={props._link}>
       <button className={props.buttonType}>
         {props.show}
       </button>
+      </a>
     </div>
   );
 }
