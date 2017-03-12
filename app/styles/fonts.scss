@@ -1,5 +1,9 @@
+@import 'variables';
 @import url('https://fonts.googleapis.com/css?family=Orbitron:400,500');
 
+html {
+  color: $main-font;
+}
 
 h1 {
   font-size: 3em;
@@ -10,7 +14,7 @@ h1 {
 .main-nav {
   h1 {
     font-family: 'Orbitron', sans-serif;
-    color: #eee;
+    color: $secondary-color;
   }
 }
 
@@ -19,6 +23,6 @@ h2 {
 }
 
 a {
-  color: #479;
+  color: $primary-color;
   text-decoration: none;
 }
