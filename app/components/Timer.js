@@ -4,14 +4,14 @@ import TimeDisplay from './Time-display';
 const Timer = React.createClass({
   //setting data for the next katathon
   //could it be possible to retrieve this data automatically, using the Meetup API?
-  nextDate: new Date('2017-01-28 10:00:00'),
+  nextDate: new Date('2017-03-13 07:00:00'),
   getInitialState: function(){
     //adds the timeLeft property to state
-    return {timeLeft: this.nextDate - Date.now()};
+    return {timeLeft: (this.nextDate - Date.now() > 0) ? (this.nextDate - Date.now() > 0) : 0};
   },
   componentDidMount: function(){
   	//acts when the component is loaded
-    this.timer = setInterval(this.tick, 1000);
+    this.timer = (this.state.timeLeft) ? setInterval(this.tick, 1000) : null;
   },
   componentWillUnmount: function(){
   	//acts then the component is removed

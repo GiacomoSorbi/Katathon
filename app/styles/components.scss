@@ -7,12 +7,12 @@
 }
 
 .main-nav {
-  background-color: $primary-color;
+  // background-color: $primary-color;
   padding: 20px 0;
 }
 
-.home-banner {
-  background: url('../img/banner-image.jpg') no-repeat center center;
+.banner-image {
+  background: url('../img/banner-image-gs.jpg') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -20,7 +20,7 @@
 }
 
 .overlay {
-  background-color: rgba(20,20,20,0.9);
+  background-color: rgba(6,17,26,0.9);
   min-height: 400px;
   text-align: center;
 }
@@ -31,7 +31,7 @@
   margin: 30px 10px;
   border-radius: 3px;
   padding: 50px 0;
-  background-color: rgba(240, 240, 240, 0.8);
+  background-color: rgba(240, 240, 240, 0.6);
   box-shadow: 3px 3px 5px 0px $main-font;
 
   h1 {
@@ -63,7 +63,7 @@
   font-family: 'Overpass Mono', monospace;
   font-size: 1.5em;
   color: $primary-color;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(238, 238, 238, 0.4);
   border: 2px solid $secondary-color;
   border-radius: 3px;
   padding: 8px;
@@ -71,7 +71,7 @@
 }
 
 footer {
-  background-color: $main-font;
+  // background-color: $main-font;
   color: $secondary-color;
   padding: 5px 10px;
 }

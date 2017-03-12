@@ -11,9 +11,11 @@ h1 {
   margin: 0;
 }
 
-.main-nav {
+nav.main-nav {
+  padding: 40px 0;
   h1 {
     font-family: 'Orbitron', sans-serif;
+    font-size: 4em;
     color: $secondary-color;
   }
 }
