@@ -15,18 +15,14 @@ export default class Home extends Component {
   render() {
     console.log(this.props);
     return (
-      <div className="home-banner">
-        <div className="overlay">
-          <Container>
-            <Timer/>
-            <Headline width='340px'>
-              <h2>More Info</h2>
-              <p>At katathon.org we are all software developers who seek constant learning.  Our primary aim is to help good developers become awesome developers, while still offering a great platform into the world of software development for the aspiring coder.</p>
-              <Link to="/about"><Button buttonType="primary-button" alignment="center" show="Find out more..."/></Link>
-            </Headline>
-          </Container>
-        </div>
-      </div>
+      <Container>
+        <Timer/>
+        <Headline width='340px'>
+          <h2>More Info</h2>
+          <p>At katathon.org we are all software developers who seek constant learning.  Our primary aim is to help good developers become awesome developers, while still offering a great platform into the world of software development for the aspiring coder.</p>
+          <Link to="/about"><Button buttonType="primary-button" alignment="left" show="Find out more..."/></Link>
+        </Headline>
+      </Container>
     );
   }
 };

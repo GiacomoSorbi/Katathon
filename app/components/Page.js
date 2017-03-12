@@ -7,10 +7,12 @@ import '../styles/global.scss';
 
 const Page = (props) => {
   return (
-    <div>
-      <Header/>
-      {props.children}
-      <Footer />
+    <div className="banner-image">
+      <div className="overlay">
+        <Header/>
+        {props.children}
+        <Footer />
+      </div>
     </div>
   );
 };
