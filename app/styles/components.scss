@@ -1,3 +1,5 @@
+@import 'variables';
+
 .container {
   position: relative;
   margin: 0 auto;
@@ -5,7 +7,7 @@
 }
 
 .main-nav {
-  background-color: #479;
+  background-color: $primary-color;
   padding: 20px 0;
 }
 
@@ -29,9 +31,13 @@
   margin: 30px 10px;
   border-radius: 3px;
   padding: 50px 0;
-  background-color: rgba(240, 240, 240, 0.9);
-  color: #555;
-  box-shadow: 3px 3px 5px 0px #555;
+  background-color: rgba(240, 240, 240, 0.8);
+  box-shadow: 3px 3px 5px 0px $main-font;
+
+  h1 {
+    font-family: sans-serif;
+    font-weight: 200;
+  }
 }
 
 .headline-container {
@@ -39,21 +45,33 @@
   max-width: 340px;
   padding: 30px 50px;
   text-align: left;
-  color: #eee;
+  color: $secondary-color;
 }
 
 .primary-button {
   font-family: 'Overpass Mono', monospace;
   font-size: 1.5em;
-  color: #eee;
-  background-color: #479;
+  color: $secondary-color;
+  background-color: $primary-color;
   border: none;
   border-radius: 3px;
   padding: 8px;
+  cursor: pointer;
+}
+
+.secondary-button {
+  font-family: 'Overpass Mono', monospace;
+  font-size: 1.5em;
+  color: $primary-color;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid $secondary-color;
+  border-radius: 3px;
+  padding: 8px;
+  cursor: pointer;
 }
 
 footer {
-  background-color: #555;
-  color: #eee;
+  background-color: $main-font;
+  color: $secondary-color;
   padding: 5px 10px;
 }
