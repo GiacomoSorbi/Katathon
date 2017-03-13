@@ -28,46 +28,65 @@
 .time-container {
   display: inline-block;
   max-width: 340px;
-  margin: 30px 10px;
+  margin: 0 10px;
+  border: 1px solid $secondary-color;
   border-radius: 3px;
-  padding: 50px 0;
+  padding: 20px 0;
   background-color: rgba(240, 240, 240, 0.6);
   box-shadow: 3px 3px 5px 0px $main-font;
 
   h1 {
-    font-family: sans-serif;
-    font-weight: 200;
+    margin: 20px;
   }
 }
 
 .headline-container {
   display: inline-block;
   max-width: 340px;
-  padding: 30px 50px;
+  padding: 20px 50px;
   text-align: left;
   color: $secondary-color;
 }
 
 .primary-button {
+  display: inline-block;
   font-family: 'Overpass Mono', monospace;
   font-size: 1.5em;
   color: $secondary-color;
   background-color: $primary-color;
+  min-width: 200px;
+  padding: 8px;
+  // border: 1px solid $secondary-color;
   border: none;
   border-radius: 3px;
-  padding: 8px;
-  cursor: pointer;
+  box-shadow: 2px 2px 2px 0px $main-font;
+
+  a {
+    color: $secondary-color;
+  }
+}
+
+.primary-button:active {
+  position: relative;
+  top: 1px;
+  box-shadow: 1px 1px 1px 0px $main-font;
 }
 
 .secondary-button {
   font-family: 'Overpass Mono', monospace;
   font-size: 1.5em;
-  color: $primary-color;
+  color: $secondary-color;
   background-color: rgba(238, 238, 238, 0.4);
-  border: 2px solid $secondary-color;
+  min-width: 200px;
+  border: 1px solid $secondary-color;
   border-radius: 3px;
   padding: 8px;
   cursor: pointer;
+  box-shadow: 3px 3px 3px 0px $main-font;
+}
+
+.secondary-button:active {
+  box-shadow: 2px 2px 2px 0px $main-font;
 }
 
 footer {
