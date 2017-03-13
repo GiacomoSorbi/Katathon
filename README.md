@@ -10,7 +10,7 @@ once you have cloned the repo, navigate to the root directory in terminal and in
 To start the server, type the following two commands one at a time:
 ```npm run build```
 ```npm run start```
-In your browser, navigate to http://localhost:8080/webpack-dev-server to view the site
+In your browser, navigate to http://localhost:8080/ to view the site
 
 ##Aims and Goals
 * create the main site of a community of competitive coding enthusiasts
