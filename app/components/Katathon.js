@@ -18,4 +18,4 @@ const Katathon = (props) => {
   );
 };
 
- export default Katathon;
+export default Katathon;

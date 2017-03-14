@@ -12,4 +12,4 @@ const Headline = (props) => {
   );
 }
 
-module.exports = Headline;
+export default Headline;

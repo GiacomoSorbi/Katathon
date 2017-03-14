@@ -5,7 +5,7 @@ import Timer from './Timer';
 import Headline from './Headline';
 import Button from './Button';
 
-export default class Home extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
   }
@@ -26,3 +26,5 @@ export default class Home extends Component {
     );
   }
 };
+
+export default Home;
