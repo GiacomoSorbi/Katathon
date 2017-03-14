@@ -18,4 +18,4 @@ const TimeDisplay = (props) => {
   );
 }
 
-module.exports = TimeDisplay;
+export default TimeDisplay;

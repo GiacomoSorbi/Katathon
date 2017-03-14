@@ -8,4 +8,4 @@ const Container = (props) => {
   );
 }
 
-module.exports = Container;
+export default Container;
