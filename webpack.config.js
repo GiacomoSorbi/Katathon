@@ -8,21 +8,39 @@ var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 module.exports = {
 	entry: __dirname + '/app/index.js',
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				loader: 'babel-loader'
+				use: [
+					{
+						loader: 'babel-loader'
+					}
+				]
 			},
 			{
 				test: /\.scss$/,
         exclude: /node_modules/,
-				loader: "style-loader!css-loader!sass-loader"
+				use: [
+					{
+						loader: "style-loader"
+					},
+					{
+						loader: "css-loader"
+					},
+					{
+						loader: "sass-loader"
+					}
+				]
 			},
       {
         test: /\.jpg$/,
         exclude: /node_modules/,
-        loader: "url-loader"
+				use: [
+					{
+						loader: "url-loader"
+					}
+				]
       }
 		]
 	},
@@ -32,4 +50,3 @@ module.exports = {
 	},
 	plugins: [HTMLWebpackPluginConfig]
 };
-
