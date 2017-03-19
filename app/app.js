@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router';
+import { Route, Link, IndexRoute, HashRouter, browserHistory } from 'react-router-dom';
 import Page from './components/Page';
 import Home from './components/Home';
 import About from './components/About';
@@ -9,13 +9,13 @@ import './styles/global.scss';
 
 const App = (props) => {
   return (
-    <Router history={hashHistory}>
-      <Route path="/" component={Page}>
-        <IndexRoute component={Home} />
+    <HashRouter>
+      <Page>
+        <Route exact={true} path="/" component={Home}/>
         <Route path="/about" component={About} />
         <Route path="/katathon" component={Katathon} />
-      </Route>
-    </Router>
+      </Page>
+    </HashRouter>
   );
 };
 

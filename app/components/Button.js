@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'react-router';
+import Link from 'react-router-dom';
 
 const Button = (props) => {
   let divStyle = {
@@ -7,11 +7,9 @@ const Button = (props) => {
   };
   return (
     <div className="alignment-container" style={divStyle} >
-    <a href={props._link}>
       <button className={props.buttonType}>
         {props.children}
       </button>
-      </a>
     </div>
   );
 }
