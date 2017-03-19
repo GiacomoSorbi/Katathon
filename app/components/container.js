@@ -2,7 +2,7 @@ import React from 'react';
 
 const Container = (props) => {
   return (
-    <div className="container">
+    <div className="container" style={{width: `${props.width || 100}%`}}>
       {props.children}
     </div>
   );
