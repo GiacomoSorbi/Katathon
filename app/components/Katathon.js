@@ -1,8 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Container from './Container';
+import Container from './container';
 import Headline from './Headline';
-import Button from './Button';
+import LeaderBoard from './LeaderBoard';
+// import Button from './Button';
 
 const Katathon = (props) => {
   return (
@@ -10,8 +11,9 @@ const Katathon = (props) => {
       <div className="overlay">
         <Container>
           <Headline width='100%' marginRight='0'>
-            <h2>Katathon!</h2>
+            <h2>Welcome to today's Katathon!</h2>
           </Headline>
+          <LeaderBoard title='LeaderBoard' data={props.participants} />
         </Container>
       </div>
     </div>
