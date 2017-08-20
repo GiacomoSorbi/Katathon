@@ -3,7 +3,7 @@ import { Route, Link, IndexRoute, HashRouter, browserHistory } from 'react-route
 import Page from './components/Page';
 import Home from './components/Home';
 import About from './components/About';
-import Katathon from './components/Katathon';
+import KatathonData from './components/KatathonData';
 
 import './styles/global.scss';
 
@@ -13,7 +13,7 @@ const App = (props) => {
       <Page>
         <Route exact={true} path="/" component={Home}/>
         <Route path="/about" component={About} />
-        <Route path="/katathon" component={Katathon} />
+        <Route path="/katathon" component={KatathonData} />
       </Page>
     </HashRouter>
   );

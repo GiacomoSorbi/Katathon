@@ -1,9 +1,6 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import Container from './container';
+import Container from './Container';
 import Headline from './Headline';
-import LeaderBoard from './LeaderBoard';
-// import Button from './Button';
+import Leaderboard from './Leaderboard';
 
 const Katathon = (props) => {
   return (
@@ -13,7 +10,7 @@ const Katathon = (props) => {
           <Headline width='100%' marginRight='0'>
             <h2>Welcome to today's Katathon!</h2>
           </Headline>
-          <LeaderBoard title='LeaderBoard' data={props.participants} />
+          <Leaderboard title='LeaderBoard' data={props.participants} />
         </Container>
       </div>
     </div>

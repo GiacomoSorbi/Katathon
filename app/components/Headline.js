@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Headline = (props) => {
   let headlineStyle = {
     maxWidth: props.width,

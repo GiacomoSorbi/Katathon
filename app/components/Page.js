@@ -1,5 +1,3 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 
@@ -9,7 +7,7 @@ const Page = (props) => {
   return (
     <div className="banner-image">
       <div className="overlay">
-        <Header/>
+        <Header />
           {props.children}
         <Footer />
       </div>

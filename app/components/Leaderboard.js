@@ -1,7 +1,4 @@
-import React from 'react';
-import Container from './container';
-
-const LeaderBoard = (props) => {
+const Leaderboard = (props) => {
   return (
     <div className='leaderboard'>
       <h3>{props.title}</h3>
@@ -22,4 +19,4 @@ const LeaderBoard = (props) => {
   );
 }
 
-export default LeaderBoard;
+export default Leaderboard;
