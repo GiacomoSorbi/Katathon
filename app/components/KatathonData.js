@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import Katathon from './Katathon';
 
 class KatathonData extends Component {

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Container from './Container';
 import Headline from './Headline';
 import Leaderboard from './Leaderboard';

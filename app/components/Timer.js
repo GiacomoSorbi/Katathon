@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import TimeDisplay from './Time-display';
 
 class Timer extends Component {

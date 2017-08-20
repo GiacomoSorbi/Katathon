@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link, IndexRoute, HashRouter, browserHistory } from 'react-router-dom';
+import { Route, IndexRoute, HashRouter, browserHistory } from 'react-router-dom';
 import Page from './components/Page';
 import Home from './components/Home';
 import About from './components/About';

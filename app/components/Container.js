@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Container = (props) => {
   return (
     <div className="container" style={{width: `${props.width || 100}%`}}>

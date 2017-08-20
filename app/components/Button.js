@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Button = (props) => {
   let divStyle = {
     textAlign: props.alignment
