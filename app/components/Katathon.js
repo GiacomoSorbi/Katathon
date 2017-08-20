@@ -12,7 +12,7 @@ const Katathon = (props) => {
           <Headline width='100%' marginRight='0'>
             <h2>Welcome to today's Katathon!</h2>
           </Headline>
-          <Leaderboard title='LeaderBoard' data={props.participants} />
+          <Leaderboard title='Leaderboard' data={props.participants} />
         </Container>
       </div>
     </div>
