@@ -1,12 +1,11 @@
 import React from 'react';
-import Container from './container';
 
-const LeaderBoard = (props) => {
+const Leaderboard = (props) => {
   return (
     <div className='leaderboard'>
       <h3>{props.title}</h3>
       {props.data.map((item, index) => {
-        return (<div className='leaderboard-item'>
+        return (<div key={item.username} className='leaderboard-item'>
           <div className='leaderboard-col leaderboard-col-position'>
             <span>{index + 1}</span>
           </div>
@@ -22,4 +21,4 @@ const LeaderBoard = (props) => {
   );
 }
 
-export default LeaderBoard;
+export default Leaderboard;

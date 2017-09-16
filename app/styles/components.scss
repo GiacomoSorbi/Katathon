@@ -1,6 +1,7 @@
 @import 'variables';
 
 .container {
+  display: inline-block;
   position: relative;
   margin: 0 auto;
   min-height: 500px;
@@ -46,6 +47,40 @@
   padding: 20px 50px;
   text-align: left;
   color: $secondary-color;
+}
+
+.leaderboard {
+  border: 1px solid #fff;
+  color: #fff;
+  width: 50%;
+  text-align: left;
+
+  h3 {
+    text-align: center;
+  }
+}
+
+.leaderboard-item:last-child {
+  margin-bottom: 18px;
+}
+
+.leaderboard-col {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.leaderboard-col-position {
+  width: 10%;
+  margin-left: 20px;
+}
+
+.leaderboard-col-name {
+  width: 75%;
+}
+
+.leaderboard-col-score {
+  width: 10%;
 }
 
 .primary-button {

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Container from './container';
+
+import Container from './Container';
 import Headline from './Headline';
 import Button from './Button';
 
