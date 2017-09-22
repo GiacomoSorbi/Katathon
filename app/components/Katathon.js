@@ -3,6 +3,7 @@ import React from 'react';
 import Container from './Container';
 import Headline from './Headline';
 import Leaderboard from './Leaderboard';
+import KataList from './KataList';
 
 const Katathon = (props) => {
   return (
@@ -13,6 +14,7 @@ const Katathon = (props) => {
             <h2>Welcome to today's Katathon!</h2>
           </Headline>
           <Leaderboard title='Leaderboard' data={props.participants} />
+          <KataList title='Kata List' data={props.katas} />
         </Container>
       </div>
     </div>

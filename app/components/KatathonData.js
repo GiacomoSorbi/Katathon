@@ -9,59 +9,73 @@ class KatathonData extends Component {
       katas: [
         {
           title: 'Shortest Word',
-          link: 'https://www.codewars.com/kata/shortest-word'
+          link: 'https://www.codewars.com/kata/shortest-word',
+          score: 2
         },
         {
           title: 'Remove Exclamation Marks',
-          link: 'https://www.codewars.com/kata/remove-exclamation-marks'
+          link: 'https://www.codewars.com/kata/remove-exclamation-marks',
+          score: 2
         },
         {
           title: 'Is Really NaN',
-          link: 'https://www.codewars.com/kata/isreallynan/'
+          link: 'https://www.codewars.com/kata/isreallynan/',
+          score: 2
         },
         {
           title: 'n-th Power',
-          link: 'https://www.codewars.com/kata/n-th-power/'
+          link: 'https://www.codewars.com/kata/n-th-power/',
+          score: 3
         },
         {
           title: 'Make a Function That Does Arithmetic',
-          link: 'https://www.codewars.com/kata/make-a-function-that-does-arithmetic'
+          link: 'https://www.codewars.com/kata/make-a-function-that-does-arithmetic',
+          score: 3
         },
         {
           title: 'How Many e-mails We Sent Today',
-          link: 'https://www.codewars.com/kata/how-many-e-mails-we-sent-today/'
+          link: 'https://www.codewars.com/kata/how-many-e-mails-we-sent-today/',
+          score: 5
         },
         {
           title: 'String to List of Integers',
-          link: 'https://www.codewars.com/kata/string-to-list-of-integers/'
+          link: 'https://www.codewars.com/kata/string-to-list-of-integers/',
+          score: 5
         },
         {
           title: 'Circle Area Inside Square',
-          link: 'https://www.codewars.com/kata/circle-area-inside-square/'
+          link: 'https://www.codewars.com/kata/circle-area-inside-square/',
+          score: 7
         },
         {
           title: 'What The Biggest Search Keys',
-          link: 'https://www.codewars.com/kata/what-the-biggest-search-keys/'
+          link: 'https://www.codewars.com/kata/what-the-biggest-search-keys/',
+          score: 7
         },
         {
           title: 'How Many Points Did The Teams from Los Angeles Score',
-          link: 'https://www.codewars.com/kata/how-many-points-did-the-teams-from-los-angeles-score/'
+          link: 'https://www.codewars.com/kata/how-many-points-did-the-teams-from-los-angeles-score/',
+          score: 10
         },
         {
           title: 'Cut Array Into Smaller Parts',
-          link: 'https://www.codewars.com/kata/cut-array-into-smaller-parts/'
+          link: 'https://www.codewars.com/kata/cut-array-into-smaller-parts/',
+          score: 10
         },
         {
           title: 'Remove HTML Tags U sing Regexp',
-          link: 'https://www.codewars.com/kata/remove-html-tags-using-regexp/'
+          link: 'https://www.codewars.com/kata/remove-html-tags-using-regexp/',
+          score: 10
         },
         {
           title: 'Simple Fun Number 165 Withdraw',
-          link: 'https://www.codewars.com/kata/simple-fun-number-165-withdraw/'
+          link: 'https://www.codewars.com/kata/simple-fun-number-165-withdraw/',
+          score: 15
         },
         {
           title: 'Simple Fun Number 160 Cut The Ropes',
-          link: 'https://www.codewars.com/kata/simple-fun-number-160-cut-the-ropes/'
+          link: 'https://www.codewars.com/kata/simple-fun-number-160-cut-the-ropes/',
+          score: 20
         }
       ],
       participants: [
@@ -99,18 +113,18 @@ class KatathonData extends Component {
 
 export default KatathonData;
 
-'https://www.codewars.com/kata/shortest-word'
-'https://www.codewars.com/kata/remove-exclamation-marks'
-'https://www.codewars.com/kata/isreallynan/'
-'https://www.codewars.com/kata/n-th-power/'
-'https://www.codewars.com/kata/make-a-function-that-does-arithmetic'
-'https://www.codewars.com/kata/shortest-word/'
-'https://www.codewars.com/kata/how-many-e-mails-we-sent-today/'
-'https://www.codewars.com/kata/string-to-list-of-integers/'
-'https://www.codewars.com/kata/circle-area-inside-square/'
-'https://www.codewars.com/kata/what-the-biggest-search-keys/'
-'https://www.codewars.com/kata/how-many-points-did-the-teams-from-los-angeles-score/'
-'https://www.codewars.com/kata/cut-array-into-smaller-parts/'
-'https://www.codewars.com/kata/remove-html-tags-using-regexp/'
-'https://www.codewars.com/kata/simple-fun-number-165-withdraw/'
-'https://www.codewars.com/kata/simple-fun-number-160-cut-the-ropes/'
+// 'https://www.codewars.com/kata/shortest-word'
+// 'https://www.codewars.com/kata/remove-exclamation-marks'
+// 'https://www.codewars.com/kata/isreallynan/'
+// 'https://www.codewars.com/kata/n-th-power/'
+// 'https://www.codewars.com/kata/make-a-function-that-does-arithmetic'
+// 'https://www.codewars.com/kata/shortest-word/'
+// 'https://www.codewars.com/kata/how-many-e-mails-we-sent-today/'
+// 'https://www.codewars.com/kata/string-to-list-of-integers/'
+// 'https://www.codewars.com/kata/circle-area-inside-square/'
+// 'https://www.codewars.com/kata/what-the-biggest-search-keys/'
+// 'https://www.codewars.com/kata/how-many-points-did-the-teams-from-los-angeles-score/'
+// 'https://www.codewars.com/kata/cut-array-into-smaller-parts/'
+// 'https://www.codewars.com/kata/remove-html-tags-using-regexp/'
+// 'https://www.codewars.com/kata/simple-fun-number-165-withdraw/'
+// 'https://www.codewars.com/kata/simple-fun-number-160-cut-the-ropes/'
