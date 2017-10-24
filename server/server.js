@@ -6,29 +6,17 @@ const mongoose = require('mongoose');
 const app = express();
 const config = require('../webpack.config.js');
 const compiler = webpack(config);
-const getDBConnection = require('./config/config').getDBConnection;
-const getRecentEvent = require('./helpers').getRecentEvent;
 
-mongoose.connect(getDBConnection());
+const api = require('./api');
+const dbConfig = require('./config');
 
-const {Schema} = mongoose;
+app.use(webpackDevMiddleware(compiler, {
+ publicPath: config.output.publicPath
+}));
 
-const eventSchema = new Schema({
-  date: Number,
-});
+mongoose.connect(dbConfig.getDBConnection());
 
-const Event = mongoose.model('Event', eventSchema);
-
- app.use(webpackDevMiddleware(compiler, {
-   publicPath: config.output.publicPath
- }));
-
-app.get('/api/currentevent', (req, res) => {
-  Event.find().then(doc => {
-    // send back most recently added event
-    res.send(getRecentEvent(doc));
-  });
-});
+api(app);
 
 app.listen(3000, (err) => {
   if (err) {
