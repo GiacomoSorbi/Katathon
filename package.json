@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
-    "server": "node ./server/server.js",
+    "server": "nodemon ./server/server.js",
     "test-server": "mocha -w --require babel-polyfill --compilers js:babel-register --recursive server/test/*.spec.js"
   },
   "repository": {

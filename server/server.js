@@ -2,6 +2,7 @@ const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const app = express();
 const config = require('../webpack.config.js');
@@ -14,7 +15,11 @@ app.use(webpackDevMiddleware(compiler, {
  publicPath: config.output.publicPath
 }));
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 mongoose.connect(dbConfig.getDBConnection());
+mongoose.set('debug', true);
 
 api(app);
 
