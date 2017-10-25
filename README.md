@@ -8,7 +8,9 @@ To set up this repo for local viewing/testing, first of all make sure you have N
 once you have cloned the repo, navigate to the root directory in terminal and install the dependencies with:
 ```npm install```
 You will need to change the ```user``` and ```pwd``` values in the db.json file to access the test database.  If you are an outside contributor, you can populate this file with the credentials for your own MongoDB database to test the APIs.
+
 _Note: You will also need to make the necessary modifications to the config file if you are testing with your own database._
+
 To start the server:
 ```npm run server```
 In your browser, navigate to http://localhost:3000/ to view the site
