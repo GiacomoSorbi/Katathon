@@ -4,13 +4,14 @@
 This project is meant to connect together all the coding aficionados that started to meet together (either physically or remotely) to start solving a bunch of pre-selected problems in a competitive and friendly way.
 
 ##Local Setup
-To set up this repo for local viewing/testing, first of all make sure you have NodeJS and NPM installed.
+To set up this repo for local viewing/testing, first of all make sure you have NodeJS and NPM installed. You will also need nodemon installed for the server script to work.
 once you have cloned the repo, navigate to the root directory in terminal and install the dependencies with:
 ```npm install```
-To start the server, type the following two commands one at a time:
-```npm run build```
-```npm run start```
-In your browser, navigate to http://localhost:8080/ to view the site
+You will need to change the ```user``` and ```pwd``` values in the db.json file to access the test database.  If you are an outside contributor, you can populate this file with the credentials for your own MongoDB database to test the APIs.
+_Note: You will also need to make the necessary modifications to the config file if you are testing with your own database._
+To start the server:
+```npm run server```
+In your browser, navigate to http://localhost:3000/ to view the site
 
 ##Aims and Goals
 * create the main site of a community of competitive coding enthusiasts
