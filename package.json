@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/GiacomoSorbi/Katathon#readme",
   "dependencies": {
+    "axios": "^0.17.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^2.1.2",
