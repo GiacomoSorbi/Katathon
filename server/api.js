@@ -106,4 +106,13 @@ module.exports = (app) => {
       res.send(eventUsers);
     });
   });
+
+  // TODO: update this endpoint route for real-world use
+  // This POST endpoint exists to receive the webhooks necessary for the server to know when a user has completed a kata
+  app.post('/', (req, res) => {
+    if (req.body.action === 'solution_finalized') {
+      // no need to send response, just check the kata, get user and update score
+      res.send(req.body);
+    }
+  });
 }
