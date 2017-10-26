@@ -11,6 +11,13 @@ module.exports = (app) => {
     });
   });
 
+  app.get('/api/newevents', (req, res) => {
+    Event.find().then(doc => {
+      // send back most recently added event
+      res.send(doc.filter(event => event.date >= (Date.now() - 43200)));
+    });
+  });
+
   app.get('/api/getuser/', (req, res) => {
     User.findOne({name: req.query.name},
       (err, results) => {
