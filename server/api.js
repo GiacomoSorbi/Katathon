@@ -50,6 +50,7 @@ module.exports = (app) => {
 
   app.post('/api/newuser/', (req, res) => {
     // create a new user for an event
+    // TODO: ISSUE: Some users return incomplete JSON
     https.get('https://www.codewars.com/api/v1/users/' + req.body.name, function(response) {
       response.on('data', function(d) {
         const json = JSON.parse(d);
@@ -66,6 +67,8 @@ module.exports = (app) => {
             if(err) throw err;
             res.send(results);
           });
+        } else {
+          res.send(json);
         }
       });
     });
