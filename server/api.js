@@ -2,6 +2,7 @@ const Event = require('./models/eventModel');
 const User = require('./models/userModel');
 const Kata = require('./models/kataModel');
 const getRecentEvent = require('./helpers').getRecentEvent;
+const https = require('https');
 
 module.exports = (app) => {
   app.get('/api/currentevent', (req, res) => {
@@ -49,18 +50,24 @@ module.exports = (app) => {
 
   app.post('/api/newuser/', (req, res) => {
     // create a new user for an event
-    // TODO: validate username with Codewars API
-    return User.create({
-      name: req.body.name,
-      events: [
-        {
-          event: req.body.event,
-          score: 0
+    https.get('https://www.codewars.com/api/v1/users/' + req.body.name, function(response) {
+      response.on('data', function(d) {
+        const json = JSON.parse(d);
+        if (json.username && json.username === req.body.name) {
+          return User.create({
+            name: req.body.name,
+            events: [
+              {
+                event: req.body.event,
+                score: 0
+              }
+            ]
+          }, (err, results) => {
+            if(err) throw err;
+            res.send(results);
+          });
         }
-      ]
-    }, (err, results) => {
-      if(err) throw err;
-      res.send(results);
+      });
     });
   });
 
@@ -68,6 +75,10 @@ module.exports = (app) => {
     // create a new kata for an event
     // TODO: query db for kata and update with event if exists
     // TODO: validate new katas with Codewars API
+
+    req.body.katas.forEach(kata => {
+      https.get('https://www.codewars.com/api/v1/code-challenge' + req.body)
+    });
 
     let newKatas = req.body.katas.map(kata => ({
       name: kata.name,
