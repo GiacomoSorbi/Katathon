@@ -50,10 +50,15 @@ module.exports = (app) => {
 
   app.post('/api/newuser/', (req, res) => {
     // create a new user for an event
-    // TODO: ISSUE: Some users return incomplete JSON
+    // TODO: Error if no event id or request is otherwise incomplete
+    let responseBody = '';
     https.get('https://www.codewars.com/api/v1/users/' + req.body.name, function(response) {
-      response.on('data', function(d) {
-        const json = JSON.parse(d);
+      response.on('data', function(chunk) {
+        responseBody += chunk;
+      });
+      response.on('end', function() {
+        const json = JSON.parse(responseBody);
+        console.log(json);
         if (json.username && json.username === req.body.name) {
           return User.create({
             name: req.body.name,
@@ -122,6 +127,7 @@ module.exports = (app) => {
   });
 
   // TODO: update this endpoint route for real-world use
+  // TODO: update functionality to test for a user and kata in the current event and update score
   // This POST endpoint exists to receive the webhooks necessary for the server to know when a user has completed a kata
   app.post('/', (req, res) => {
     if (req.body.action === 'solution_finalized') {
