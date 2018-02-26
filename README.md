@@ -1,9 +1,9 @@
-#Katathon
+# Katathon
 
-##General
+## General
 This project is meant to connect together all the coding aficionados that started to meet together (either physically or remotely) to start solving a bunch of pre-selected problems in a competitive and friendly way.
 
-##Local Setup
+## Local Setup
 To set up this repo for local viewing/testing, first of all make sure you have NodeJS and NPM installed. You will also need nodemon installed for the server script to work.
 once you have cloned the repo, navigate to the root directory in terminal and install the dependencies with:
 ```npm install```
@@ -15,7 +15,7 @@ To start the server:
 ```npm run server```
 In your browser, navigate to http://localhost:3000/ to view the site
 
-##Aims and Goals
+## Aims and Goals
 * create the main site of a community of competitive coding enthusiasts
 * practice development skills, including:
     * front-end development
@@ -27,7 +27,7 @@ In your browser, navigate to http://localhost:3000/ to view the site
     * APIs integration
 * spread computer literacy and involve minorities in the IT industry
 
-##Features
+## Features
 * static pages including content like:
   * who we are
   * our goals
