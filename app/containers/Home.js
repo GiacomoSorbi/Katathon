@@ -1,15 +1,23 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions/index';
 import {Link} from 'react-router-dom';
 
-import Container from './Container';
-import Timer from './Timer';
-import Headline from './Headline';
-import Button from './Button';
+import Container from '../components/Container';
+import Timer from '../components/Timer';
+import Headline from '../components/Headline';
+import Button from '../components/Button';
 
 class Home extends Component {
   constructor(props) {
     super(props);
   }
+
+  //Just for testing purpose
+  componentDidMount() {
+    this.props.onLoadTestData();
+  }
+
   navigateToAbout() {
     this.props.router.push(null, '/about');
   }
@@ -19,7 +27,7 @@ class Home extends Component {
       <Container>
         <Timer/>
         <Headline width='340px'>
-          <h2>More Info</h2>
+        <p>{this.props.test}</p>
           <p>At katathon.org we are all software developers who seek constant learning.  Our primary aim is to help good developers become awesome developers, while still offering a great platform into the world of software development for the aspiring coder.</p>
           <Link to="/about"><Button buttonType="secondary-button" alignment="left">Find out more...</Button></Link>
         </Headline>
@@ -28,4 +36,17 @@ class Home extends Component {
   }
 };
 
-export default Home;
+const mapStateToProps = state => {
+  console.log(state.testReducer.testData);
+  return {
+    test: state.testReducer.testData
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onLoadTestData: () => dispatch(actions.getTestData())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
