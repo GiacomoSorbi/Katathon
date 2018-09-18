@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions/index';
 import {Link} from 'react-router-dom';
+
+import * as actions from '../redux/actions/index';
 
 import Container from '../components/Container';
 import Timer from '../components/Timer';
