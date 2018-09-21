@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, IndexRoute, HashRouter, browserHistory } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './store';
+import store from './redux/store';
 
 //Components
 import Page from './components/Page';
