@@ -4,16 +4,27 @@
 This project is meant to connect together all the coding aficionados that started to meet together (either physically or remotely) to start solving a bunch of pre-selected problems in a competitive and friendly way.
 
 ## Local Setup
-To set up this repo for local viewing/testing, first of all make sure you have NodeJS and NPM installed. You will also need nodemon installed for the server script to work.
-once you have cloned the repo, navigate to the root directory in terminal and install the dependencies with:
-```npm install```
-You will need to change the ```user``` and ```pwd``` values in the db.json file to access the test database.  If you are an outside contributor, you can populate this file with the credentials for your own MongoDB database to test the APIs.
+To set up this repo for local viewing/testing, first of all make sure you have the latest stable versions of NodeJS and NPM installed.
+Once you have cloned the repo, navigate to the root directory in terminal and install the dependencies with:
+```
+npm install
+```
+You will need to add a .env file to the project root to access the test database. You can populate this file with the credentials for your own MongoDB database to test the APIs. The .env file contents should be in the format:
+
+```
+DB_USER=username
+DB_PASS=password
+```
+
+where `username` is your MongoDB database user name and `passsword` is your MongoDB database password.
 
 _Note: You will also need to make the necessary modifications to the config file if you are testing with your own database._
 
 To start the server:
-```npm run server```
-In your browser, navigate to http://localhost:3000/ to view the site
+```
+npm run dev
+```
+In your browser, navigate to [http://localhost:3000](http://localhost:3000) to view the app.
 
 ## Aims and Goals
 * create the main site of a community of competitive coding enthusiasts
@@ -59,7 +70,7 @@ In your browser, navigate to http://localhost:3000/ to view the site
     * check on the solved problems on a single user basis before and after the event to auto-compute scores
     * sending newsletter to registered users
     * sending reminders to registered users
-  * loctions management, including
+  * locations management, including
     * locations listing, searching and filtering
     * location rating by registered users according to specific parameters on a 0-10 basis
     * new location submission
