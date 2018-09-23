@@ -1,3 +1,0 @@
-export {
-    getTestData
-} from './testAction';

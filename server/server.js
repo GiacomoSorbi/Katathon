@@ -1,31 +1,41 @@
-const express = require('express');
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+const express = require('express')
+const webpack = require('webpack')
+const webpackDevMiddleware = require('webpack-dev-middleware')
+const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 
-const app = express();
-const config = require('../webpack.config.js');
-const compiler = webpack(config);
+const app = express()
+const config = require('../webpack.config.js')
+const compiler = webpack(config)
 
-const api = require('./api');
-const dbConfig = require('./config');
+const api = require('./api')
+const dbConfig = require('./config')
 
 app.use(webpackDevMiddleware(compiler, {
- publicPath: config.output.publicPath
-}));
+  publicPath: config.output.publicPath
+}))
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(require('webpack-hot-middleware')(compiler))
 
-mongoose.connect(dbConfig.getDBConnection());
-mongoose.set('debug', true);
+compiler.plugin('done', () => {
+  Object.keys(require.cache).forEach((id) => {
+    if (!/[\/\\]node_modules[\/\\]/.test(id)) {
+      delete require.cache[id]
+    }
+  })
+})
 
-api(app);
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+mongoose.connect(dbConfig.getDBConnection())
+mongoose.set('debug', true)
+
+api(app)
 
 app.listen(3000, (err) => {
   if (err) {
-    console.error(err);
+    console.error(err)
   }
-  console.log('The app is listening on port 3000');
-});
+  console.log('The src is listening on port 3000')
+})
