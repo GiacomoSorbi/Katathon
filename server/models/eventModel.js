@@ -1,6 +1,4 @@
-const mongoose = require('mongoose')
-
-const { Schema } = mongoose
+import mongoose, { Schema } from 'mongoose'
 
 const eventSchema = new Schema({
   date: Number

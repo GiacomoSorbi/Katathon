@@ -1,4 +1,4 @@
-const { user, pwd } = require('./db')
+import { user, pwd } from './db'
 
 module.exports = {
   getDBConnection() {

@@ -1,9 +1,9 @@
-const https = require('https')
+import https from 'https'
 
-const Event = require('./models/eventModel')
-const User = require('./models/userModel')
-const Kata = require('./models/kataModel')
-const { getRecentEvent } = require('./helpers')
+import Event from './models/eventModel'
+import User from './models/userModel'
+import Kata from './models/kataModel'
+import { getRecentEvent } from './helpers'
 
 module.exports = (app) => {
   app.get('/api/currentevent', (req, res) => {

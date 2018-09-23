@@ -1,15 +1,16 @@
-const express = require('express')
-const webpack = require('webpack')
-const webpackDevMiddleware = require('webpack-dev-middleware')
-const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
+import express from 'express'
+import webpack from 'webpack'
+import webpackDevMiddleware from 'webpack-dev-middleware'
+import mongoose from 'mongoose'
+import bodyParser from 'body-parser'
 
-const app = express()
-const config = require('../webpack.config.js')
+import config from '../webpack.config.js'
+
+import api from './api'
+import dbConfig from './config'
+
 const compiler = webpack(config)
-
-const api = require('./api')
-const dbConfig = require('./config')
+const app = express()
 
 app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath
