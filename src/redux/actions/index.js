@@ -1,0 +1,1 @@
+export { getTestData } from './testAction'

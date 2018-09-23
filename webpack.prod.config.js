@@ -2,9 +2,10 @@ const webpack = require('webpack')
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const NODE_ENV = process.env.NODE_ENV || 'development'
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: ['webpack-hot-middleware/client', './src/index.js'],
   devtool: 'source-map',
   module: {
@@ -46,7 +47,7 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg|mp4)$/i,
         loader: 'file-loader',
         options: {
-          name: 'assets/[path][name].[ext]',
+          name: 'assets/[path][name].[hash].[ext]',
           context: './src/assets'
         }
       }
@@ -66,11 +67,12 @@ module.exports = {
       filename: 'index.html',
       inject: 'body'
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.DefinePlugin({
+      NODE_ENV: JSON.stringify(NODE_ENV)
+    })
   ],
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.[hash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   }
