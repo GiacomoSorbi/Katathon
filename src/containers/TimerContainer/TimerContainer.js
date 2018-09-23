@@ -3,15 +3,13 @@ import React, { Component } from 'react'
 import Timer from '../../components/Timer/Timer'
 
 export default class TimerContainer extends Component {
-  constructor(props) {
-    super(props)
-    this.nextDate = new Date('2017-03-13 22:10:00')
-    this.state = {
-      timeLeft: (this.nextDate - Date.now() > 0) ? this.nextDate - Date.now() : 0
-    }
+  nextDate = new Date('2018-03-13 22:10:00')
+
+  state = {
+    timeLeft: (this.nextDate - Date.now() > 0) ? this.nextDate - Date.now() : 0
   }
 
-  stringifyTime(t) {
+  static stringifyTime = (t) => {
     return (t < 10) ? '0' + t : t
   }
 
@@ -29,7 +27,7 @@ export default class TimerContainer extends Component {
     clearInterval(this.timer)
   }
 
-  tick() {
+  tick = () => {
     this.setState({ timeLeft: Math.floor((this.nextDate - Date.now()) / 1000) * 1000 })
   }
 
@@ -42,10 +40,10 @@ export default class TimerContainer extends Component {
     return (
       <Timer
         timeLeft={this.state.timeLeft}
-        days={this.stringifyTime(days)}
-        hours={this.stringifyTime(hours)}
-        minutes={this.stringifyTime(minutes)}
-        seconds={this.stringifyTime(seconds)}
+        days={TimerContainer.stringifyTime(days)}
+        hours={TimerContainer.stringifyTime(hours)}
+        minutes={TimerContainer.stringifyTime(minutes)}
+        seconds={TimerContainer.stringifyTime(seconds)}
       />
     )
   }

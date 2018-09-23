@@ -4,7 +4,7 @@ const KataList = (props) => (
   <div className='kataboard'>
     <h3>{props.title}</h3>
     {props.data.map((item, index) => (
-      <div key={item.username} className='kataboard-item'>
+      <div key={item.title} className='kataboard-item'>
         <div className='kataboard-col kataboard-col-position'>
           <span>{index + 1}</span>
         </div>
