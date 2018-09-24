@@ -8,6 +8,8 @@ This project is meant to connect together all the coding aficionados that starte
 ### Prerequisites
 To set up this repo for local viewing/testing, first of all make sure you have the latest stable versions of NodeJS and NPM installed.
 
+Install [Redux DevTools Chrome extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?utm_source=chrome-ntp-icon). It is recommended to use Google Chrome as your development browser for this project and you will need to have the above extension installed to be able to run the project locally. It is recommended for any extension as it makes it easy to debug Redux logic.
+
 You should also create a sandbox MongoDB database for the project to connect to. You can create one at [mLab](https://mlab.com/) or another online MongoDB host.
 
 **Important:** You will be asked to set a database admin username and password when you create a database. You will need to remember these credentials, (Not to be confused with your mLab sign in credentials.)
