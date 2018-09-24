@@ -4,7 +4,15 @@
 This project is meant to connect together all the coding aficionados that started to meet together (either physically or remotely) to start solving a bunch of pre-selected problems in a competitive and friendly way.
 
 ## Local Setup
+
+### Prerequisites
 To set up this repo for local viewing/testing, first of all make sure you have the latest stable versions of NodeJS and NPM installed.
+
+You should also create a sandbox MongoDB database for the project to connect to. You can create one at [mLab](https://mlab.com/) or another online MongoDB host.
+
+**Important:** You will be asked to set a database admin username and password when you create a database. You will need to remember these credentials, (Not to be confused with your mLab sign in credentials.)
+
+### Installation
 Once you have cloned the repo, navigate to the root directory in terminal and install the dependencies with:
 ```
 npm install
@@ -18,8 +26,7 @@ DB_PASS=password
 
 where `username` is your MongoDB database user name and `passsword` is your MongoDB database password.
 
-_Note: You will also need to make the necessary modifications to the config file if you are testing with your own database._
-
+### Running the Development Server
 To start the server:
 ```
 npm run dev
