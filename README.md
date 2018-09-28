@@ -24,9 +24,10 @@ You will need to add a .env file to the project root to access the test database
 ```
 DB_USER=username
 DB_PASS=password
+DB_ADDRESS=address
 ```
 
-where `username` is your MongoDB database user name and `passsword` is your MongoDB database password.
+where `username` is your MongoDB database user name, `passsword` is your MongoDB database password and `address` is the remainder of your unique mongodb database address following the username and password. For example: `@ds195639.mlab.com:95639/testdatabase`
 
 ### Running the Development Server
 To start the server:
