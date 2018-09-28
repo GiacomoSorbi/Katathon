@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "webpack --progress --color --config webpack.prod.config.js",
-    "dev": "node --harmony server/index.js",
+    "dev": "nodemon server/index.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "precommit": "eslint src server --ext=jsx --ext=js"
@@ -73,6 +73,7 @@
     "husky": "^1.0.0-rc.15",
     "jest": "^23.6.0",
     "node-sass": "^4.9.3",
+    "nodemon": "^1.18.4",
     "react-hot-loader": "^4.3.11",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
