@@ -8,7 +8,14 @@ const KatathonSchema = new Schema({
   },
   katas: [
     {
+      id: {
+        type: String
+      },
       name: {
+        type: String,
+        required: true
+      },
+      slug: {
         type: String,
         required: true
       },
