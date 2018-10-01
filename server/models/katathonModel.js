@@ -3,12 +3,12 @@ import mongoose, { Schema } from 'mongoose'
 
 const KatathonSchema = new Schema({
   date: {
-    type: Number,
+    type: String,
     required: true
   },
   katas: [
     {
-      id: {
+      kataId: {
         type: String
       },
       name: {
@@ -46,6 +46,10 @@ const KatathonSchema = new Schema({
   completed: {
     type: Boolean,
     default: false
+  },
+  date_created: {
+    type: Date,
+    default: Date.now
   }
 })
 
