@@ -2,18 +2,22 @@ import express from 'express'
 const router = express.Router()
 
 
-import { katathon, addUser, leaderBoard, katathons, newKatathon, updateKatathon } from '../controllers'
+import * as controller from '../controllers'
 
-router.get('/events', katathons)
+router.post('/events', controller.newKatathon)
 
-router.post('/events', newKatathon)
+router.get('/events', controller.listKatathons)
 
-router.put('/events', updateKatathon)
+router.put('/events/:katathonId', controller.updateKatathon)
 
-router.get('/', katathon)
+router.post('/addkata/:katathonId', controller.addKata)
 
-router.post('/adduser', addUser)
+router.put('/:katathonId/:kataId', controller.updateKata)
 
-router.get('/:katathonId', leaderBoard)
+router.get('/', controller.nextKatathon)
+
+router.post('/adduser/:katathonId', controller.addUser)
+
+router.get('/:katathonId', controller.leaderBoard)
 
 export default router
