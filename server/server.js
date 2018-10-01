@@ -34,7 +34,7 @@ mongoose.connect(dbConfig.getDBConnection())
 mongoose.set('debug', true)
 
 // After allllll that above middleware, we finally handle our own routes!
-app.use('/api', routes)
+app.use('/api/katathon', routes)
 
 app.listen(3000, (err) => {
   if (err) {
