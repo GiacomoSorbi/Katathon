@@ -1,12 +1,15 @@
 import Katathon from '../models/katathonModel'
 
-import { dateToString } from '../helpers'
+import {
+  dateToString,
+  getNextEvent
+} from '../helpers'
 
 export const newKatathon = async (req, res) => {
   try {
     // Should be date from our front end application.
     // I am not sure how we would set the date at our front end application so for now
-    // the format should be yyyy,mm,dd Example: (2018,10,22)
+    // the format should be yyyy,mm,dd Example: (2018-10-22)
     const eventDate = await dateToString(req.body.date)
 
     // Create Katathon and save it to the db
@@ -45,7 +48,7 @@ export const addKata = async (req, res) => {
     const katathon = await Katathon.findById(req.params.katathonId)
 
     if(katathon) {
-      katathon.katas.unshift(newKata)
+      katathon.katas = [newKata, ...katathon.katas]
       katathon.save()
       res.status(200).json({
         result: 'success',
@@ -69,13 +72,15 @@ export const updateKata = async (req, res) => {
     const { name, slug, link, score } = req.body
 
     const katathon = await Katathon.findById(katathonId)
-    katathon.katas.map(kata => {
-      if(kata.kataId === kataId) {
+
+    katathon.katas = katathon.katas.map(kata => {
+      if(kata.kataId == kataId) {
         if(name) kata.name = name
         if(slug) kata.slug = slug
         if(link) kata.link = link
         if(score) kata.score = score
       }
+      return kata
     })
 
     katathon.save()
@@ -151,8 +156,31 @@ export const updateKatathon = async (req, res) => {
 }
 
 
-export const nextKatathon = (req, res) => {
-  res.send('Next Katathon is coming soonddd')
+export const nextKatathon = async (req, res) => {
+  try {
+    const katathons = await Katathon.find({ completed: false }).sort({ date_created: -1 })
+    // console.log(katathons)
+    if(katathons.length > 0) {
+      const nextKatathon = getNextEvent(katathons)
+      res.status(200).json({
+        result: 'Success',
+        data: nextKatathon,
+        message: 'Next Katathon found successfully'
+      })
+    }else {
+      res.status(404).json({
+        result: '404',
+        data: [],
+        message: 'No Katathon event found'
+      })
+    }
+  } catch (err) {
+    res.status(400).json({
+      result: 'failed',
+      data: [],
+      message: `query next Katathon failed. Error ${err}`
+    })
+  }
 }
 
 export const addUser = (req, res) => {
