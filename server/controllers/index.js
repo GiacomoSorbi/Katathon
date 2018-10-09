@@ -1,7 +1,7 @@
 import Katathon from '../models/katathonModel'
 
 import {
-  dateToString,
+  dateToTimestamp,
   getNextEvent
 } from '../helpers'
 
@@ -10,11 +10,11 @@ export const newKatathon = async (req, res) => {
     // Should be date from our front end application.
     // I am not sure how we would set the date at our front end application so for now
     // the format should be yyyy,mm,dd Example: (2018-10-22)
-    const eventDate = await dateToString(req.body.date)
+    const eventDateTimestamp = await dateToTimestamp(req.body.date)
 
     // Create Katathon and save it to the db
     const newKatathon = await new Katathon({
-      date: eventDate
+      date: eventDateTimestamp
     }).save()
 
     if (newKatathon) {
@@ -127,7 +127,7 @@ export const listKatathons = async (req, res) => {
 export const updateKatathon = async (req, res) => {
   // Update Katathon
   try {
-    const eventDate = await dateToString(req.body.date)
+    const eventDate = await dateToTimestamp(req.body.date)
 
     const katathon = await Katathon.findById(req.params.katathonId)
 

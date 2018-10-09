@@ -3,4 +3,4 @@ export const getNextEvent = events => {
   return newEvents.concat().sort((a, b) => a.date < b.date ? -1 : 1)[0]
 }
 
-export const dateToString = date => new Date(date).valueOf()
+export const dateToTimestamp = date => new Date(date).valueOf()
