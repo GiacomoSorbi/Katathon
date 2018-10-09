@@ -159,7 +159,6 @@ export const updateKatathon = async (req, res) => {
 export const nextKatathon = async (req, res) => {
   try {
     const katathons = await Katathon.find({ completed: false }).sort({ date_created: -1 })
-    // console.log(katathons)
     if(katathons.length > 0) {
       const nextKatathon = getNextEvent(katathons)
       res.status(200).json({
