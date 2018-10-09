@@ -19,14 +19,14 @@ export const newKatathon = async (req, res) => {
 
     if (newKatathon) {
       res.status(200).json({
-        result: 'success',
+        result: 'Success',
         data: newKatathon,
         message: 'The new event has been successfully created. Please add the katas to the event'
       })
     }
   } catch (err) {
     res.status(400).json({
-      result: 'failed',
+      result: 'Failed',
       data: {},
       message: `Unable to create a new event. Error ${err}`
     })
@@ -51,14 +51,14 @@ export const addKata = async (req, res) => {
       katathon.katas = [newKata, ...katathon.katas]
       katathon.save()
       res.status(200).json({
-        result: 'success',
+        result: 'Success',
         data: katathon,
         message: 'New kata has been added to the Katathon'
       })
     }
   } catch(err) {
     res.status(400).json({
-      result: 'failed',
+      result: 'Failed',
       data: [],
       message: `Unable to create a new kata. Error ${err}`
     })
@@ -68,22 +68,22 @@ export const addKata = async (req, res) => {
 export const updateKata = async (req, res) => {
   // Update Kata
   try {
-    const { katathonId, kataId } = req.params
-    const { name, slug, link, score } = req.body
+    const { katathonId, _id } = req.params
+    const { kataId, name, slug, link, score } = req.body
+
+    const bodyCopy = {
+      kataId,
+      name,
+      slug,
+      link,
+      score
+    }
 
     const katathon = await Katathon.findById(katathonId)
 
-    katathon.katas = katathon.katas.map(kata => {
-      if(kata.kataId == kataId) {
-        if(name) kata.name = name
-        if(slug) kata.slug = slug
-        if(link) kata.link = link
-        if(score) kata.score = score
-      }
-      return kata
-    })
-
+    katathon.katas = katathon.katas.map(kata => kata._id == _id ? Object.assign(kata, bodyCopy) : kata)
     katathon.save()
+
     res.status(200).json({
       result: 'Success',
       data: katathon,
@@ -91,7 +91,7 @@ export const updateKata = async (req, res) => {
     })
   }catch(err) {
     res.status(400).json({
-      result: 'failed',
+      result: 'Failed',
       data: [],
       message: `Unable to update kata. Error ${err}`
     })
@@ -110,14 +110,14 @@ export const listKatathons = async (req, res) => {
       })
     }else {
       res.status(404).json({
-        result: '404',
+        result: 'Not Found',
         data: [],
         message: 'No Katathon event found'
       })
     }
   } catch (err) {
     res.status(400).json({
-      result: 'failed',
+      result: 'Failed',
       data: [],
       message: `query list of Katathons failed. Error ${err}`
     })
@@ -141,14 +141,14 @@ export const updateKatathon = async (req, res) => {
       })
     } else {
       res.status(404).json({
-        result: '404',
+        result: 'Not Found',
         data: [],
         message: 'No Katathon event found'
       })
     }
   } catch(err) {
     res.status(400).json({
-      result: 'failed',
+      result: 'Failed',
       data: [],
       message: `Unable to update Katathon. Error ${err}`
     })
@@ -158,7 +158,7 @@ export const updateKatathon = async (req, res) => {
 
 export const nextKatathon = async (req, res) => {
   try {
-    const katathons = await Katathon.find({ completed: false }).sort({ date_created: -1 })
+    const katathons = await Katathon.find({ completed: false })
     if(katathons.length > 0) {
       const nextKatathon = getNextEvent(katathons)
       res.status(200).json({
@@ -168,14 +168,14 @@ export const nextKatathon = async (req, res) => {
       })
     }else {
       res.status(404).json({
-        result: '404',
+        result: 'Not Found',
         data: [],
         message: 'No Katathon event found'
       })
     }
   } catch (err) {
     res.status(400).json({
-      result: 'failed',
+      result: 'Failed',
       data: [],
       message: `query next Katathon failed. Error ${err}`
     })

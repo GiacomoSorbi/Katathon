@@ -12,7 +12,7 @@ router.put('/events/:katathonId', controller.updateKatathon)
 
 router.post('/addkata/:katathonId', controller.addKata)
 
-router.put('/:katathonId/:kataId', controller.updateKata)
+router.put('/:katathonId/:_id', controller.updateKata)
 
 router.get('/', controller.nextKatathon)
 
