@@ -1,9 +1,13 @@
+// import https from 'https'
+
 import Katathon from '../models/katathonModel'
 
 import {
   dateToTimestamp,
   getNextEvent
 } from '../helpers'
+
+const https = require('https')
 
 export const newKatathon = async (req, res) => {
   try {
@@ -81,7 +85,7 @@ export const updateKata = async (req, res) => {
 
     const katathon = await Katathon.findById(katathonId)
 
-    katathon.katas = katathon.katas.map(kata => kata._id == _id ? Object.assign(kata, bodyCopy) : kata)
+    katathon.katas = katathon.katas.map(kata => kata._id === _id ? Object.assign(kata, bodyCopy) : kata)
     katathon.save()
 
     res.status(200).json({
@@ -183,7 +187,64 @@ export const nextKatathon = async (req, res) => {
 }
 
 export const addUser = (req, res) => {
-  res.send('Add new user')
+  try {
+    const { userName } = req.body
+
+    https.get(`https://www.codewars.com/api/v1/users/${userName}/code-challenges/completed?page=0`, (httpsResponse) => {
+      let data = ''
+
+      httpsResponse.on('data', (chunk) => {
+        data += chunk
+      })
+
+      httpsResponse.on('end', async () => {
+        try {
+          const userResponse = JSON.parse(data)
+
+          if (userResponse.success === false) {
+            throw new Error('User not found')
+          }
+          const newUser = {
+            userName
+          }
+          const katathon = await Katathon.findById(req.params.katathonId)
+
+          if (!katathon) {
+            throw new Error('Katathon not found')
+          }
+
+          const isNew = katathon.users.every(user => user.userName !== userName)
+
+          if (!isNew) {
+            throw new Error('User already in katathon')
+          }
+
+          katathon.users = [newUser, ...katathon.users]
+          katathon.save()
+          res.status(200).json({
+            result: 'Success',
+            data: katathon,
+            message: 'New kata has been added to the Katathon'
+          })
+        } catch (err) {
+          res.status(400).json({
+            result: 'Failed',
+            data: [],
+            message: `Unable to add new user. Error ${err}`
+          })
+        }
+      })
+    })
+      .on('error', (err) => {
+        throw new Error(err)
+      })
+  } catch (err) {
+    res.status(400).json({
+      result: 'Failed',
+      data: [],
+      message: `Unable to add new user. Error ${err}`
+    })
+  }
 }
 
 export const leaderBoard = (req, res) => {
