@@ -1,4 +1,4 @@
-// import https from 'https'
+import https from 'https'
 
 import Katathon from '../models/katathonModel'
 
@@ -6,8 +6,6 @@ import {
   dateToTimestamp,
   getNextEvent
 } from '../helpers'
-
-const https = require('https')
 
 export const newKatathon = async (req, res) => {
   try {
@@ -224,7 +222,7 @@ export const addUser = (req, res) => {
           res.status(200).json({
             result: 'Success',
             data: katathon,
-            message: 'New kata has been added to the Katathon'
+            message: 'New user has been added to the Katathon'
           })
         } catch (err) {
           res.status(400).json({
