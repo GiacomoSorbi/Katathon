@@ -38,7 +38,7 @@ app.use('/api/katathon', routes)
 
 app.listen(3000, (err) => {
   if (err) {
-    console.error(err)
+    // console.error(err)
   }
-  console.log('The src is listening on port 3000')
+  // console.log('The src is listening on port 3000')
 })
