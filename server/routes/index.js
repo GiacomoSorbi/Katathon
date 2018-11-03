@@ -18,6 +18,6 @@ router.get('/', controller.nextKatathon)
 
 router.post('/adduser/:katathonId', controller.addUser)
 
-router.get('/:katathonId', controller.leaderBoard)
+router.get('/:katathonId', controller.getLeaderBoard)
 
 export default router

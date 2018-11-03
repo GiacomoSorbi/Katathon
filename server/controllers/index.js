@@ -245,6 +245,29 @@ export const addUser = (req, res) => {
   }
 }
 
-export const leaderBoard = (req, res) => {
-  res.send('Katathon board')
+export const getLeaderBoard = async (req, res) => {
+  try {
+    const katathon = await Katathon.findById(req.params.katathonId)
+
+    if (!katathon) {
+      throw new Error('Katathon not found')
+    }
+
+    const allUsers = katathon.users.map(user => ({
+      userName: user.userName,
+      userScore: user.userScore
+    }))
+
+    res.status(200).json({
+      result: 'Success',
+      data: allUsers,
+      message: ''
+    })
+  } catch (err) {
+    res.status(400).json({
+      result: 'Failed',
+      data: [],
+      message: `Unable to add get leader board. Error ${err}`
+    })
+  }
 }
