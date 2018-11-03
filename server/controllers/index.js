@@ -245,7 +245,7 @@ export const addUser = (req, res) => {
   }
 }
 
-export const leaderBoard = async (req, res) => {
+export const getLeaderBoard = async (req, res) => {
   try {
     const katathon = await Katathon.findById(req.params.katathonId)
 
