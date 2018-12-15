@@ -7,6 +7,8 @@ import {
   getNextEvent
 } from '../helpers'
 
+import { newKatathonJob } from '../jobs/index'
+
 export const newKatathon = async (req, res) => {
   try {
     // Should be date from our front end application.
@@ -20,6 +22,9 @@ export const newKatathon = async (req, res) => {
     }).save()
 
     if (newKatathon) {
+      // This will schedule the updateALlScores job
+      newKatathonJob(eventDateTimestamp, newKatathon._id)
+
       res.status(200).json({
         result: 'Success',
         data: newKatathon,
