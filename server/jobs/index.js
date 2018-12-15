@@ -1,6 +1,6 @@
 import { scheduleJob } from 'node-schedule'
 
-import { updateAllScores } from '../helpers/index'
+import { updateAllScores } from '../services/index'
 
 // Ensures job only runs during Katathon
 export const newKatathonJob = (timestamp, katathonId) => {
