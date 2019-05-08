@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Overpass+Mono');
-@import url('https://fonts.googleapis.com/css?family=Muli:200,300');
+$dark-gray1: #303132;
+$dark-gray2: #222325;
+$dark-gray3: #262729;
+$dark-gray4: #303133;
+$dark-gray5: #3C3C3C;
+
+@import "~@blueprintjs/core/src/blueprint.scss";
 
 html {
   font-family: 'Muli', sans-serif;
