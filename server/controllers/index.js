@@ -168,11 +168,19 @@ export const nextKatathon = async (req, res) => {
     const katathons = await Katathon.find({ completed: false })
     if(katathons.length > 0) {
       const nextKatathon = getNextEvent(katathons)
-      res.status(200).json({
-        result: 'Success',
-        data: nextKatathon,
-        message: 'Next Katathon found successfully'
-      })
+      if (!nextKatathon) {
+        res.status(404).json({
+          result: 'Not found',
+          data: [],
+          message: 'No future Katathon events'
+        })
+      } else {
+        res.status(200).json({
+          result: 'Success',
+          data: nextKatathon,
+          message: 'Next Katathon found successfully'
+        })
+      }
     }else {
       res.status(404).json({
         result: 'Not Found',
