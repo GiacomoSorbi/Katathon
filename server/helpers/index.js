@@ -1,5 +1,6 @@
 export const getNextEvent = events => {
   const newEvents = events.filter(event => event.date >= Date.now().valueOf())
+  console.log(newEvents)
   return newEvents.concat().sort((a, b) => a.date < b.date ? -1 : 1)[0]
 }
 
